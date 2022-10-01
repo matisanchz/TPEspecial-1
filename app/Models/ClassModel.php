@@ -24,13 +24,13 @@
         }
 
 
-        // /**
-        //  * Elimina una tarea dado su id.
-        //  */
-        // function deleteTaskById($id) {
-        //     $query = $this->db->prepare('DELETE FROM task WHERE id = ?');
-        //     $query->execute([$id]);
-        // }
+        /**
+         * Elimina una clase dado su nombre.
+         */
+        function deleteTaskById($id) {
+            $query = $this->db->prepare('DELETE FROM task WHERE id = ?');
+            $query->execute([$id]);
+        }
 
 
 

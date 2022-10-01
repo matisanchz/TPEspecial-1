@@ -43,7 +43,7 @@
             header("Location: " . BASE_URL);
         }
 
-        public function addClass(){
+        public function addSpecie(){
             
             // Crear form y Agregar variables con method POST
             $scientific_name = $_POST['name'];

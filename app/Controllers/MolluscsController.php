@@ -27,11 +27,11 @@
 
         public function showSubclasses() {
             $subclasses = $this->subclassModel->getAllSubclasses();
-            $this->view->showClasses($subclasses);
+            $this->view->showSubclasses($subclasses);
         }
         public function showSpecies() {
             $species = $this->specieModel->getAllSpecies();
-            $this->view->showClasses($species);
+            $this->view->showSpecies($species);
         }
     
     
