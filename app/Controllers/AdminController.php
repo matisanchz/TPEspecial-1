@@ -66,7 +66,6 @@
             $name = $_POST['name'];
             $author = $_POST['author'];
             $id_class = $_POST['id_class'];
-
             $this->subclassModel->editSubclass($name, $author, $id_class, $id);
 
             header("Location: " . BASE_URL);
@@ -95,16 +94,16 @@
         public function addSubclass(){
             $name = $_POST['name'];
             $author = $_POST['author'];
-            $id_class = $_POST['class'];
+            $id_class = $_POST['id_class'];
             $this->subclassModel->insertSubclass($name, $author, $id_class);
             header("Location: " . BASE_URL);
         }
 
         public function addSpecie(){
-            $scientific_name = $_POST['name'];
+            $scientific_name = $_POST['scientific_name'];
             $author = $_POST['author'];
             $habitat = $_POST['habitat'];
-            $id_subclass = $_POST['id'];
+            $id_subclass = $_POST['id_subclass'];
             $photo = $_POST['photo'];
             $this->specieModel->insertSpecie($scientific_name, $author, $habitat, $id_subclass, $photo);
             header("Location: " . BASE_URL);
