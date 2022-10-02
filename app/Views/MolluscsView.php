@@ -30,4 +30,12 @@
             $this->smarty->display('specieList.tpl');
         }
 
+        function showError(){
+            $this->smarty->display('error.tpl');
+        }
+
+        public function showHome(){
+            $this->smarty->display('home.tpl');
+        }
+
     }

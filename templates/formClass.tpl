@@ -1,5 +1,8 @@
+{include file="header.tpl"}
 
-<form action="add" method="POST" class="my-4">
+<form 
+action="Class/{if $param === 'add'}add{else}edit/{$id}{/if}"
+ method="POST" class="my-4">
     <div class="row">
         <div class="col-9">
             <div class="form-group">
@@ -16,3 +19,5 @@
 
     <button type="submit" class="btn btn-primary mt-2">Guardar</button>
 </form>
+
+{include file="footer.tpl"}

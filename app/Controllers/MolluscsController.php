@@ -33,6 +33,14 @@
             $species = $this->specieModel->getAllSpecies();
             $this->view->showSpecies($species);
         }
+
+        public function showError(){
+            $this->view->showError();
+        }
+
+        public function showHome(){
+            $this->view->showHome();
+        }
     
     
 

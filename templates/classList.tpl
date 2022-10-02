@@ -1,20 +1,37 @@
-{* {include file="header.tpl"} *}
+{include file="header.tpl"}
 
-{* {include file="form_alta.tpl"} *}
-
-<ul class="list-group">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Author</th>
+      <th scope="col">Features</th>
+    </tr>
+  </thead>
+  <tbody>
     {foreach from=$classes item=$class}
-        <li class='list-group-item d-flex justify-content-between align-items-center'>
-            <span> <b>{$class->name}</b> - {$class->author} ({$class->features}) </span>
-            <div class="ml-auto">
-                <a href='delete/{$class->id_class}' type='button' class='btn btn-danger'>Borrar</a>
-            </div>
-        </li>
+        <tr>
+            <th scope="row">{$class->id_class}</th>
+            <td>{$class->name}</td>
+            <td>{$class->author}</td>
+            <td>{$class->features}</td>
+            <td><a href='Class/form/edit/{$class->id_class}' type='button' class='btn btn-success'>Editar</a>    
+            <a href='Class/confirm-delete/{$class->id_class}' type='button' class='btn btn-danger'>Borrar</a></td>
+        </tr>
     {/foreach}
-</ul>
+  </tbody>
+  <tfoot>
+        <tr>
+            <td>
+                <a href='Class/form/add' type='button' class='btn btn-info'>Agregar</a>
+            </td>
+        </tr>
+  </tfoot>
+</table>
 
 <p class="mt-3"><small>Showing {$count} classes</small></p>
 
-<a href="list2">Subclasses</a>
+<a href="Class/Subclass">Subclasses</a>
 
 {include file="footer.tpl"}
