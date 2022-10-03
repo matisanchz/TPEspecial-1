@@ -17,11 +17,11 @@
         }
 
         public function editSubclass($name, $author, $id_class, $id){
-            $query = $this->db->prepare("UPDATE Subclass SET name=?,
-                                                        author=?,
-                                                        id_class=? 
-                                        WHERE id_subclass=?");
-            $query->execute([$name, $author, $features, $id]);
+            $query = $this->db->prepare("UPDATE Subclass SET name=(?),
+                                                        author=(?),
+                                                        id_class=(?) 
+                                        WHERE id_subclass=(?)");
+            $query->execute([$name, $author, $id_class, $id]);
         }
 
         public function getAllSubclasses() {

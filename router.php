@@ -46,14 +46,14 @@
                                     $AdminController->addSubclass();
                                     break;
                                 case 'edit':
-                                    $AdminController->editSubclass($params[3]);
+                                    $AdminController->editSubclass($params[2], $params[3]);
                                     break;
                                 case 'confirm-delete':
                                     $param = $params[0]."/".$params[1];
                                     $AdminController->showDelete($param, $params[3]);
                                     break;
                                 case 'delete':
-                                    $AdminController->DeleteSubclass($params[0], $params[3]);
+                                    $AdminController->DeleteSubclass($params[1], $params[3]);
                                     break;
                                 case 'Specie':
                                     if(isset($params[3])&&!empty($params[3])){
@@ -72,7 +72,10 @@
                                                 $AdminController->showDelete($param, $params[4]);
                                                 break;
                                             case 'delete':
-                                                $AdminController->DeleteSpecie($params[0], $params[3]);
+                                                $AdminController->DeleteSpecie($params[2], $params[4]);
+                                                break;
+                                            case 'show':
+                                                $MolluscsController->showSpecie($params[2], $params[4]);
                                                 break;
                                             default:
                                                 $MolluscsController->showError();

@@ -23,8 +23,12 @@
             $this->smarty->display('subclassList.tpl');
         }
 
-        function showSpecies($species) {
+        public function showSpecie($specie){
+            $this->smarty->assign('specie', $specie); 
+            $this->smarty->display('specie.tpl');
+        }
 
+        function showSpecies($species) {
             $this->smarty->assign('count', count($species)); 
             $this->smarty->assign('species', $species);
             $this->smarty->display('specieList.tpl');

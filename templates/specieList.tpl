@@ -7,7 +7,6 @@
       <th scope="col">Scientific Name</th>
       <th scope="col">Author</th>
       <th scope="col">Location</th>
-      <th scope="col">id_subclass</th>
     </tr>
   </thead>
   <tbody>
@@ -16,10 +15,13 @@
             <th scope="row">{$specie->id_specie}</th>
             <td>{$specie->scientific_name}</td>
             <td>{$specie->author}</td>
-            <td>{$specie->habitat}</td>
-            <td>{$specie->id_subclass}</td>
-            <td><a href='Class/Subclass/Specie/form/edit/{$specie->id_specie}' type='button' class='btn btn-success'>Editar</a>    
-            <a href='Class/Subclass/Specie/confirm-delete/{$specie->id_specie}' type='button' class='btn btn-danger'>Borrar</a></td>
+            <td>{$specie->location}</td>
+            
+            <td>
+              <a href='Class/Subclass/Specie/show/{$specie->id_specie}' type='button' class='btn btn-dark'>Show</a>
+              <a href='Class/Subclass/Specie/form/edit/{$specie->id_specie}' type='button' class='btn btn-success'>Editar</a>    
+              <a href='Class/Subclass/Specie/confirm-delete/{$specie->id_specie}' type='button' class='btn btn-danger'>Borrar</a>
+            </td>
         </tr>
     {/foreach}
   </tbody>

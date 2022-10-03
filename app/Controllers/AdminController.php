@@ -62,23 +62,23 @@
             header("Location: " . BASE_URL);
         }
 
-        public function editSubclass($id){
+        public function editSubclass($table, $id){
             $name = $_POST['name'];
             $author = $_POST['author'];
-            $id_class = $_POST['id_class'];
+            $id_class = (int)$_POST['id_class'];
             $this->subclassModel->editSubclass($name, $author, $id_class, $id);
-
+            $this->adminView->showMessage($table, $id);
             header("Location: " . BASE_URL);
         }
 
         public function editSpecie($id){
-            $scientific_name = $_POST['name'];
+            $scientific_name = $_POST['scientific_name'];
             $author = $_POST['author'];
-            $habitat = $_POST['habitat'];
-            $id_subclass = $_POST['id'];
+            $location = $_POST['location'];
+            $id_subclass = (int)$_POST['id_subclass'];
             $photo = $_POST['photo'];
 
-            $this->specieModel->editSpecie($scientific_name, $author, $habitat, $id_subclass, $photo, $id);
+            $this->specieModel->editSpecie($scientific_name, $author, $location, $id_subclass, $photo, $id);
 
             header("Location: " . BASE_URL);
         }
@@ -102,10 +102,10 @@
         public function addSpecie(){
             $scientific_name = $_POST['scientific_name'];
             $author = $_POST['author'];
-            $habitat = $_POST['habitat'];
+            $location = $_POST['location'];
             $id_subclass = $_POST['id_subclass'];
             $photo = $_POST['photo'];
-            $this->specieModel->insertSpecie($scientific_name, $author, $habitat, $id_subclass, $photo);
+            $this->specieModel->insertSpecie($scientific_name, $author, $location, $id_subclass, $photo);
             header("Location: " . BASE_URL);
         }
     }

@@ -20,6 +20,11 @@
 
         }
 
+        public function showSpecie($table, $id){
+            $item = $this->specieModel->getSpecie($table, $id);
+            $this->view->showSpecie($item);
+        }
+
         public function showClasses() {
             $classes = $this->classModel->getAllClasses();
             $this->view->showClasses($classes);
