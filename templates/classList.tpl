@@ -16,8 +16,11 @@
             <td>{$class->name}</td>
             <td>{$class->author}</td>
             <td>{$class->features}</td>
-            <td><a href='Class/form/edit/{$class->id_class}' type='button' class='btn btn-success'>Editar</a>    
-            <a href='Class/confirm-delete/{$class->id_class}' type='button' class='btn btn-danger'>Borrar</a></td>
+            <td>
+              <a href='Class/Subclass/list/{$class->id_class}' type='button' class='btn btn-dark'>Show</a>
+              <a href='Class/form/edit/{$class->id_class}' type='button' class='btn btn-success'>Editar</a>    
+              <a href='Class/confirm-delete/{$class->id_class}' type='button' class='btn btn-danger'>Borrar</a>
+            </td>
         </tr>
     {/foreach}
   </tbody>
@@ -31,7 +34,5 @@
 </table>
 
 <p class="mt-3"><small>Showing {$count} classes</small></p>
-
-<a href="Class/Subclass">Subclasses</a>
 
 {include file="footer.tpl"}

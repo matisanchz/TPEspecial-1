@@ -30,12 +30,13 @@
             $this->view->showClasses($classes);
         }
 
-        public function showSubclasses() {
-            $subclasses = $this->subclassModel->getAllSubclasses();
+        public function showSubclasses($id) {
+            $subclasses = $this->subclassModel->getSubclassesById($id);
             $this->view->showSubclasses($subclasses);
         }
-        public function showSpecies() {
-            $species = $this->specieModel->getAllSpecies();
+
+        public function showSpecies($id) {
+            $species = $this->specieModel->getSpeciesById($id);
             $this->view->showSpecies($species);
         }
 

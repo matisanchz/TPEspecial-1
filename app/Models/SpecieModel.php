@@ -28,6 +28,16 @@
             return $species;
         }
 
+        public function getSpeciesById($id) {
+            $query = $this->db->prepare("SELECT * FROM Specie
+                                        WHERE id_subclass = (?)");
+            $query->execute([$id]);
+
+            $species = $query->fetchAll(PDO::FETCH_OBJ);
+            
+            return $species;
+        }
+
         public function insertSpecie($scientific_name, $author, $location, $id_subclass, $photo) {
             $query = $this->db->prepare("INSERT INTO Specie (scientific_name, author, location, id_subclass, photo) VALUES (?, ?, ?, ?, ?)");
             $query->execute([$scientific_name, $author, $location, $id_subclass, $photo]);

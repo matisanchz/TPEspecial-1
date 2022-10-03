@@ -33,5 +33,15 @@
             return $subclasses;
         }
 
+        public function getSubclassesById($id) {
+            $query = $this->db->prepare("SELECT * FROM Subclass
+                                        WHERE id_class=(?)");
+            $query->execute([$id]);
+
+            $subclasses = $query->fetchAll(PDO::FETCH_OBJ);
+            
+            return $subclasses;
+        }
+
 
     }

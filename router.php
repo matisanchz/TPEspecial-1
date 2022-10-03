@@ -39,6 +39,9 @@
                     case 'Subclass':
                         if(isset($params[2])&&!empty($params[2])){
                             switch($params[2]){
+                                case 'list':
+                                    $MolluscsController->showSubclasses($params[3]);
+                                    break;
                                 case 'form':
                                     $AdminController->showFormSubclass($params[3], $params[4]);
                                     break;
@@ -58,6 +61,9 @@
                                 case 'Specie':
                                     if(isset($params[3])&&!empty($params[3])){
                                         switch($params[3]){
+                                            case 'list':
+                                                $MolluscsController->showSpecies($params[4]);
+                                                break;
                                             case 'form':
                                                 $AdminController->showFormSpecie($params[4], $params[5]);
                                                 break;
@@ -77,27 +83,27 @@
                                             case 'show':
                                                 $MolluscsController->showSpecie($params[2], $params[4]);
                                                 break;
-                                            default:
-                                                $MolluscsController->showError();
-                                                break;
+                                            // default:
+                                            //     $MolluscsController->showError();
+                                            //     break;
                                         }
                                     }
-                                    else{
-                                        $MolluscsController->showSpecies();
-                                        break;
-                                    }
-                                default:
-                                    $MolluscsController->showError();
-                                    break;
+                                    // else{
+                                    //     $MolluscsController->showSpecies();
+                                    //     break;
+                                    // }
+                                // default:
+                                //     $MolluscsController->showError();
+                                //     break;
                             }
                         }
-                        else{
-                            $MolluscsController->showSubclasses();
-                            break;
-                        }
-                    default:
-                        $MolluscsController->showError();
-                        break;
+                        // else{
+                        //     $MolluscsController->showSubclasses();
+                        //     break;
+                        // }
+                    // default:
+                    //     $MolluscsController->showError();
+                    //     break;
                 }
             }
             else{
