@@ -83,32 +83,30 @@
                                             case 'show':
                                                 $MolluscsController->showSpecie($params[2], $params[4]);
                                                 break;
-                                            // default:
-                                            //     $MolluscsController->showError();
-                                            //     break;
+                                            default:
+                                                $MolluscsController->showError();
+                                                break;
                                         }
                                     }
-                                    // else{
-                                    //     $MolluscsController->showSpecies();
-                                    //     break;
-                                    // }
-                                // default:
-                                //     $MolluscsController->showError();
-                                //     break;
+                                    break;
+                                default:
+                                    $MolluscsController->showError();
+                                    break;
                             }
                         }
-                        // else{
-                        //     $MolluscsController->showSubclasses();
-                        //     break;
-                        // }
-                    // default:
-                    //     $MolluscsController->showError();
-                    //     break;
+                        break;
+                    default:
+                        $MolluscsController->showError();
+                        break;
                 }
             }
             else{
                 $MolluscsController->showClasses();
                 break;
             }
+            break;
+        default:
+        $MolluscsController->showError();
+        break;
     }
 
