@@ -18,20 +18,24 @@
             <td>{$specie->location}</td>
             
             <td>
-              <a href='Class/Subclass/Specie/show/{$specie->id_specie}' type='button' class='btn btn-dark'>Show</a>
-              <a href='Class/Subclass/Specie/form/edit/{$specie->id_specie}' type='button' class='btn btn-success'>Editar</a>    
-              <a href='Class/Subclass/Specie/confirm-delete/{$specie->id_specie}' type='button' class='btn btn-danger'>Borrar</a>
+              <a href='Specie/show/{$specie->id_specie}' type='button' class='btn btn-dark'>Show</a>
+              {if isset($smarty.session.IS_LOGGED)&&($smarty.session.IS_LOGGED)}
+                <a href='Specie/form/edit/{$specie->id_specie}' type='button' class='btn btn-success'>Editar</a>    
+                <a href='Specie/confirm-delete/{$specie->id_specie}' type='button' class='btn btn-danger'>Borrar</a>
+              {/if}
             </td>
         </tr>
     {/foreach}
   </tbody>
+  {if isset($smarty.session.IS_LOGGED)&&($smarty.session.IS_LOGGED)}
   <tfoot>
         <tr>
             <td>
-                <a href='Class/Subclass/Specie/form/add' type='button' class='btn btn-info'>Agregar</a>
+                <a href='Specie/form/add' type='button' class='btn btn-info'>Agregar</a>
             </td>
         </tr>
   </tfoot>
+  {/if}
 </table>
 
 <p class="mt-3"><small>Showing {$count} species</small></p>

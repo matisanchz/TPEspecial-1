@@ -11,7 +11,7 @@
     <p class="card-text">{$speci->id_class} - {$speci->Class} ({$speci->AuthorClass})</p>
     <h6 class="card-title">Subclass</h6>
     <p class="card-text">{$speci->id_subclass} - {$speci->Subclass} ({$speci->AuthorSubclass})</p>
-    <a href="Class/Subclass/Specie/list/{$speci->id_subclass}" class="btn btn-primary">Back</a>
+    <a href="Specie/list/{$speci->id_subclass}" class="btn btn-primary">Back</a>
   </div>
 </div>
 {/foreach}

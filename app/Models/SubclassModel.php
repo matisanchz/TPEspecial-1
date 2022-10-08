@@ -1,5 +1,7 @@
 <?php
 
+require_once './app/Models/ConexionModel.php';
+
     class SubclassModel extends ConexionModel{
 
         public function __construct() {
@@ -33,15 +35,26 @@
             return $subclasses;
         }
 
-        public function getSubclassesById($id) {
-            $query = $this->db->prepare("SELECT * FROM Subclass
-                                        WHERE id_class=(?)");
-            $query->execute([$id]);
+        public function getSubclassesByClass($name) {
+            $query = $this->db->prepare("SELECT s.* FROM Subclass s
+                                        INNER JOIN Class c ON c.id_class = s.id_class
+                                        WHERE c.name = (?)");
+            $query->execute([$name]);
 
             $subclasses = $query->fetchAll(PDO::FETCH_OBJ);
             
             return $subclasses;
         }
 
+        public function getClassesNames(){
+            $query = $this->db->prepare("SELECT DISTINCT a.id_class, b.name FROM Subclass a
+                                        INNER JOIN Class b ON 
+                                        a.id_class = b.id_class");
+            $query->execute();
+
+            $classes = $query->fetchAll(PDO::FETCH_OBJ);
+            
+            return $classes;
+        }
 
     }

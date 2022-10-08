@@ -1,12 +1,14 @@
 <?php
 
+require_once './app/Models/ConexionModel.php';
+
     class SpecieModel extends ConexionModel{
 
         public function __construct() {
             parent::__construct();
         }
 
-        public function getSpecie($table, $id) {
+        public function getSpecieBySubclass($table, $id) {
             $query = $this->db->prepare("SELECT a.*, b.name as Subclass, b.author as AuthorSubclass, c.name as Class, c.author as AuthorClass, c.id_class
                                         FROM 
                                         Specie a INNER JOIN Subclass b ON a.id_subclass = b.id_subclass
@@ -28,10 +30,23 @@
             return $species;
         }
 
-        public function getSpeciesById($id) {
-            $query = $this->db->prepare("SELECT * FROM Specie
-                                        WHERE id_subclass = (?)");
-            $query->execute([$id]);
+        public function getSubclassesNames(){
+            $query = $this->db->prepare("SELECT DISTINCT a.id_subclass, b.name FROM Specie a
+                                        INNER JOIN Subclass b ON 
+                                        a.id_subclass = b.id_subclass");
+            $query->execute();
+
+            $subclasses = $query->fetchAll(PDO::FETCH_OBJ);
+            
+            return $subclasses;
+        }
+
+        public function getSpeciesBySubclass($name) {
+            $query = $this->db->prepare("SELECT a.* FROM Specie a
+                                        INNER JOIN Subclass b
+                                        ON a.id_subclass = b.id_subclass
+                                        WHERE b.name = (?)");
+            $query->execute([$name]);
 
             $species = $query->fetchAll(PDO::FETCH_OBJ);
             

@@ -17,20 +17,24 @@
             <td>{$subclass->author}</td>
             <td>{$subclass->id_class}</td>
             <td>
-              <a href='Class/Subclass/Specie/list/{$subclass->id_subclass}' type='button' class='btn btn-dark'>Show</a>
-              <a href='Class/Subclass/form/edit/{$subclass->id_subclass}' type='button' class='btn btn-success'>Editar</a>    
-              <a href='Class/Subclass/confirm-delete/{$subclass->id_subclass}' type='button' class='btn btn-danger'>Borrar</a>
+              <a href='Specie/list/{$subclass->name}' type='button' class='btn btn-dark'>Show</a>
+              {if isset($smarty.session.IS_LOGGED)&&($smarty.session.IS_LOGGED)}
+                <a href='Subclass/form/edit/{$subclass->id_subclass}' type='button' class='btn btn-success'>Editar</a>    
+                <a href='Subclass/confirm-delete/{$subclass->id_subclass}' type='button' class='btn btn-danger'>Borrar</a>
+              {/if}
             </td>
         </tr>
     {/foreach}
   </tbody>
+  {if isset($smarty.session.IS_LOGGED)&&($smarty.session.IS_LOGGED)}
   <tfoot>
         <tr>
             <td>
-                <a href='Class/Subclass/form/add' type='button' class='btn btn-info'>Agregar</a>
+                <a href='Subclass/form/add' type='button' class='btn btn-info'>Agregar</a>
             </td>
         </tr>
   </tfoot>
+  {/if}
 </table>
 
 <p class="mt-3"><small>Showing {$count} subclasses</small></p>
