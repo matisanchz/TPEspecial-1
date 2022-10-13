@@ -11,16 +11,17 @@
   </thead>
   <tbody>
     {foreach from=$classes item=$class}
-        <tr>
-            <th scope="row">{$class->id_class}</th>
+      <tr class="classlist">
+        <td scope="row"><a class="link" href='Subclass/list/{$class->name}'>{$class->id_class}</a></td>
             <td>{$class->name}</td>
             <td>{$class->author}</td>
             <td>{$class->features}</td>
             <td>
-              <a href='Subclass/list/{$class->name}' type='button' class='btn btn-dark'>Show</a>
+            
+              {* <a href='Subclass/list/{$class->name}' type='button' class='btn btn-dark'>Show</a> *}
               {if isset($smarty.session.IS_LOGGED)&&($smarty.session.IS_LOGGED)}
-              <a href='Class/form/edit/{$class->id_class}' type='button' class='btn btn-success'>Editar</a>    
-              <a href='Class/confirm-delete/{$class->id_class}' type='button' class='btn btn-danger'>Borrar</a>
+              <a href='Class/form/edit/{$class->id_class}' type='button' class='btn btn-success'><img src="./img/edit.png" alt="Logo" width="25" height="25"></a>    
+              <a href='Class/confirm-delete/{$class->id_class}' type='button' class='btn btn-danger'><img src="./img/delete.png" alt="Logo" width="25" height="25"></a>
               {/if}
             </td>
         </tr>
