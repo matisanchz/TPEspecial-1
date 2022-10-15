@@ -32,7 +32,7 @@ class AuthController{
 
             header("Location: " . BASE_URL);
         } else {
-           $this->view->showFormLogin("El usuario o la contraseña no existe.");
+           $this->view->showFormLogin("Please provide a valid user and password.");
         } 
     }
 

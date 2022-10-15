@@ -1,24 +1,25 @@
 
 {include 'header.tpl'}
 
-<div class="mt-5 w-25 mx-auto">
-    <form method="POST" action="validate">
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" required class="form-control" id="email" name="email" aria-describedby="emailHelp">
+<div class="mt-5 w-50 mx-auto login-wrapper">
+    <form action="validate" method="POST" class="form">
+      <img src="img/avatar.png" alt="">
+      <h2>Login</h2>
+      <div class="input-group">
+        <input type="email" name="email" id="loginUser" required>
+        <label for="loginUser">Email</label>
+      </div>
+      <div class="input-group">
+        <input type="password" name="password" id="loginPassword" required>
+        <label for="loginPassword">Password</label>
+      </div>
+      {if $error} 
+        <div class="alert alert-danger mt-3">
+            {$error}
         </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" required class="form-control" id="password" name="password">
-        </div>
-
-        {if $error} 
-            <div class="alert alert-danger mt-3">
-                {$error}
-            </div>
-        {/if}
-        <button type="submit" class="btn btn-primary mt-3">Entrar</button>
+      {/if}
+      <input type="submit" value="Enter" class="submit-btn">
     </form>
-</div>
+  </div>
 
 {include file='footer.tpl'}

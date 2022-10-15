@@ -12,16 +12,17 @@
   <tbody>
     {foreach from=$species item=$specie}
         <tr>
+          <a class="link" href='Specie/show/{$specie->id_specie}' hidden>{$class->id_subclass}</a>
+        </tr>
+        <tr class="list">
             <th scope="row">{$specie->id_specie}</th>
             <td>{$specie->scientific_name}</td>
             <td>{$specie->author}</td>
             <td>{$specie->location}</td>
-            
             <td>
-              <a href='Specie/show/{$specie->id_specie}' type='button' class='btn btn-dark'>Show</a>
               {if isset($smarty.session.IS_LOGGED)&&($smarty.session.IS_LOGGED)}
-                <a href='Specie/form/edit/{$specie->id_specie}' type='button' class='btn btn-success'>Editar</a>    
-                <a href='Specie/confirm-delete/{$specie->id_specie}' type='button' class='btn btn-danger'>Borrar</a>
+                <a href='Specie/form/edit/{$specie->id_specie}' type='button' class='btn btn-success'><img src="./img/edit.png" alt="Logo" width="25" height="25"></a>    
+                <a href='Specie/confirm-delete/{$specie->id_specie}' type='button' class='btn btn-danger'><img src="./img/delete.png" alt="Logo" width="25" height="25"></a>
               {/if}
             </td>
         </tr>
@@ -31,7 +32,7 @@
   <tfoot>
         <tr>
             <td>
-                <a href='Specie/form/add' type='button' class='btn btn-info'>Agregar</a>
+                <a href='Specie/form/add' type='button' class='btn btn-info'>Add</a>
             </td>
         </tr>
   </tfoot>

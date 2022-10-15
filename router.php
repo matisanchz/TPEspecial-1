@@ -15,9 +15,6 @@
 
     $params = explode('/', $action);
 
-    // $classes = $ClassController->getClassesNames();
-    // var_dump($classes[0]->name);
-
     //admin@gmail.com
     //web2
 
@@ -25,6 +22,10 @@
         case 'home':
             $MainController = new MainController();
             $MainController->showHome();
+            break;
+        case 'about':
+            $MainController = new MainController();
+            $MainController->showAbout();
             break;
         case 'login':
             $authController = new AuthController();
@@ -176,24 +177,4 @@
         break;
     }
 
-    //Quiero contemplar la chance de hacer NameClass/Subclass para listar por item
-    // if(isset($params[1]))
-    //     switch ($params[1]) {
-    //         case 'Subclass':
-    //             $SubclassController->showSubclasses($params[0]);
-    //             break;
-    //         case 'Specie':
-    //             $SpecieController->showSpecies($params[0]);
-    //             break;
-    //         default:
-    //         $MainController->showError();
-    //         break;
-    //     }
-
-    // // //Quiero contemplar la chance de hacer NameClass/NameSubclass/Specie para listar por item
-    // // switch ($params[2]) {
-    // //     case 'Specie':
-    // //         $SpecieController->showSpecies($params[1]);
-    // //         break;
-    // // }
 

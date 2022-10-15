@@ -3,24 +3,25 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
       <th scope="col">Name</th>
       <th scope="col">Author</th>
-      <th scope="col">id_class</th>
+      {* <th scope="col">id_class</th> *}
     </tr>
   </thead>
   <tbody>
     {foreach from=$subclasses item=$subclass}
-        <tr>
-            <th scope="row">{$subclass->id_subclass}</th>
+      <tr>
+        <a class="link" href='Specie/list/{$subclass->name}' hidden>{$class->id_subclass}</a>
+      </tr>
+        <tr class="list">
+            {* <th scope="row">{$subclass->id_subclass}</th> *}
             <td>{$subclass->name}</td>
             <td>{$subclass->author}</td>
-            <td>{$subclass->id_class}</td>
+            {* <td>{$subclass->id_class}</td> *}
             <td>
-              <a href='Specie/list/{$subclass->name}' type='button' class='btn btn-dark'>Show</a>
               {if isset($smarty.session.IS_LOGGED)&&($smarty.session.IS_LOGGED)}
-                <a href='Subclass/form/edit/{$subclass->id_subclass}' type='button' class='btn btn-success'>Editar</a>    
-                <a href='Subclass/confirm-delete/{$subclass->id_subclass}' type='button' class='btn btn-danger'>Borrar</a>
+                <a href='Subclass/form/edit/{$subclass->id_subclass}' type='button' class='btn btn-success'><img src="./img/edit.png" alt="Logo" width="25" height="25"></a>    
+                <a href='Subclass/confirm-delete/{$subclass->id_subclass}' type='button' class='btn btn-danger'><img src="./img/delete.png" alt="Logo" width="25" height="25"></a>
               {/if}
             </td>
         </tr>
@@ -30,7 +31,7 @@
   <tfoot>
         <tr>
             <td>
-                <a href='Subclass/form/add' type='button' class='btn btn-info'>Agregar</a>
+                <a href='Subclass/form/add' type='button' class='btn btn-info'>Add</a>
             </td>
         </tr>
   </tfoot>

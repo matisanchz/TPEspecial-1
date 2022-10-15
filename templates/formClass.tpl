@@ -6,18 +6,19 @@ action="Class/{if $param === 'add'}add{else}edit/{$id}{/if}"
     <div class="row">
         <div class="col-9">
             <div class="form-group">
-                <label>Título</label>
-                <input name="name" type="text" class="form-control">
-                <input name="author" type="text" class="form-control">
+                <label>Name</label>
+                <input name="name" type="text" class="form-control w-50">
+                <label>Author</label>
+                <input name="author" type="text" class="form-control w-50">
             </div>
         </div>
 
     <div class="form-group">
-        <label>Descripcion</label>
-        <textarea name="features" class="form-control" rows="3"></textarea>
+        <label>Features</label>
+        <textarea name="features" class="form-control w-50" rows="3"></textarea>
     </div>
 
-    <button type="submit" class="btn btn-primary mt-2">Guardar</button>
+    <button type="submit" class="btn btn-primary mt-2 w-50">Save</button>
 </form>
 
 {include file="footer.tpl"}

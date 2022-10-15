@@ -1,6 +1,6 @@
 "use strict"
 
-let Trs = document.querySelectorAll('.classlist');
+let Trs = document.querySelectorAll('.list');
 let Links = document.querySelectorAll('.link');
 
 for(let i = 0; i < Trs.length; i++){

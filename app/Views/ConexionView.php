@@ -29,4 +29,8 @@ class ConexionView{
         $this->smarty->display('delete.tpl');
     }
 
+    public function showAbout(){
+        $this->smarty->display('about.tpl');
+    }
+
 }

@@ -26,4 +26,8 @@ class MainController extends GenericController{
     public function showHome(){
         $this->view->showHome();
     }
+
+    public function showAbout(){
+        $this->view->showAbout();
+    }
 }

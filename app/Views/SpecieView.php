@@ -7,7 +7,7 @@ class SpecieView extends ConexionView{
     public function __construct(){
         parent::__construct();
     }
-
+    
     public function showSpecie($specie){
         $this->smarty->assign('specie', $specie); 
         $this->smarty->display('specie.tpl');
