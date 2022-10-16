@@ -36,7 +36,7 @@ require_once './app/Models/ConexionModel.php';
         }
 
         public function getSubclassesByClass($name) {
-            $query = $this->db->prepare("SELECT s.* FROM Subclass s
+            $query = $this->db->prepare("SELECT s.*, c.name as ClassName FROM Subclass s
                                         INNER JOIN Class c ON c.id_class = s.id_class
                                         WHERE c.name = (?)");
             $query->execute([$name]);
@@ -46,15 +46,13 @@ require_once './app/Models/ConexionModel.php';
             return $subclasses;
         }
 
-        public function getClassesNames(){
-            $query = $this->db->prepare("SELECT DISTINCT a.id_class, b.name FROM Subclass a
-                                        INNER JOIN Class b ON 
-                                        a.id_class = b.id_class");
+        public function getSubclassesNames(){
+            $query = $this->db->prepare("SELECT id_subclass, name FROM Subclass");
             $query->execute();
 
-            $classes = $query->fetchAll(PDO::FETCH_OBJ);
+            $subclasses = $query->fetchAll(PDO::FETCH_OBJ);
             
-            return $classes;
+            return $subclasses;
         }
 
     }

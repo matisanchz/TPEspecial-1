@@ -3,17 +3,19 @@
 require_once './app/Controllers/GenericController.php';
 require_once './app/Models/SpecieModel.php';
 require_once './app/Views/SpecieView.php';
-require_once './app/Helpers/AuthHelper.php';
+// require_once './app/Helpers/AuthHelper.php';
 
 class SpecieController extends GenericController{
 
-    private $helper;
+    // private $helper;
+    private $modelSubclass;
 
     public function __construct(){
         parent::__construct();
         $this->view = new SpecieView;
         $this->model = new SpecieModel;
-        $this->helper = new AuthHelper();
+        $this->modelSubclass = new SubclassModel;
+        // $this->helper = new AuthHelper();
 
     }
 
@@ -33,19 +35,19 @@ class SpecieController extends GenericController{
     }
 
     public function showFormSpecie($param, $id=null){
-        $this->helper->checkLoggedIn();
-        $subclasses = $this->model->getSubclassesNames();
+        $this->checkLoggedIn();
+        $subclasses = $this->modelSubclass->getSubclassesNames();
         $this->view->showFormSpecie($param, $id, $subclasses);
     }
 
     public function DeleteSpecie($table, $id){
-        $this->helper->checkLoggedIn();
+        $this->checkLoggedIn();
         $this->model->DeleteSpecieById($id);
         $this->view->showMessage($table, $id);
     }
 
     public function editSpecie($id){
-        $this->helper->checkLoggedIn();
+        $this->checkLoggedIn();
         $scientific_name = $_POST['scientific_name'];
         $author = $_POST['author'];
         $location = $_POST['location'];
@@ -58,7 +60,7 @@ class SpecieController extends GenericController{
     }
 
     public function addSpecie(){
-        $this->helper->checkLoggedIn();
+        $this->checkLoggedIn();
         $scientific_name = $_POST['scientific_name'];
         $author = $_POST['author'];
         $location = $_POST['location'];

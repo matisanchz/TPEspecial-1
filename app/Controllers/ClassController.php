@@ -3,18 +3,18 @@
 require_once './app/Controllers/GenericController.php';
 require_once './app/Models/ClassModel.php';
 require_once './app/Views/ClassView.php';
-require_once './app/Helpers/AuthHelper.php';
+// require_once './app/Helpers/AuthHelper.php';
 
 
 class ClassController extends GenericController{
 
-    private $helper;
+    // private $helper;
 
     public function __construct(){
         parent::__construct();
         $this->view = new ClassView();
         $this->model = new ClassModel();
-        $this->helper = new AuthHelper();
+        // $this->helper = new AuthHelper();
     }
 
     public function showClasses() {
@@ -23,18 +23,18 @@ class ClassController extends GenericController{
     }
 
     public function showFormClass($param, $id=null){
-        $this->helper->checkLoggedIn();
+        $this->checkLoggedIn();
         $this->view->showFormClass($param, $id);
     }
 
     public function DeleteClass($table, $id){
-        $this->helper->checkLoggedIn();
+        $this->checkLoggedIn();
         $this->model->DeleteClassById($id);
         $this->view->showMessage($table, $id);
     }
 
     public function editClass($id){
-        $this->helper->checkLoggedIn();
+        $this->checkLoggedIn();
         $name = $_POST['name'];
         $author = $_POST['author'];
         $features = $_POST['features'];
@@ -45,7 +45,7 @@ class ClassController extends GenericController{
     }
 
     public function addClass(){
-        $this->helper->checkLoggedIn();
+        $this->checkLoggedIn();
         $name = $_POST['name'];
         $author = $_POST['author'];
         $features = $_POST['features'];

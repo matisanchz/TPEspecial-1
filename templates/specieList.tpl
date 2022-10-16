@@ -1,5 +1,11 @@
 {include file="header.tpl"}
 
+{if isset($species[0]->SubclassName)}
+  <h1>Showing {$count} Species from {$species[0]->SubclassName} Subclass</h1>
+{else}
+  <h1>Showing all Species</h1>
+{/if}
+
 <table class="table">
   <thead>
     <tr>
@@ -38,7 +44,5 @@
   </tfoot>
   {/if}
 </table>
-
-<p class="mt-3"><small>Showing {$count} species</small></p>
 
 {include file="footer.tpl"}

@@ -2,20 +2,20 @@
 
 require_once './app/Controllers/GenericController.php';
 require_once './app/Views/ConexionView.php';
-require_once './app/Helpers/AuthHelper.php';
+// require_once './app/Helpers/AuthHelper.php';
 
 class MainController extends GenericController{
     
-    private $helper;
+    // private $helper;
 
     public function __construct(){
         parent::__construct();
         $this->view = new ConexionView();
-        $this->helper = new AuthHelper();
+        // $this->helper = new AuthHelper();
     }
 
     public function showDelete($param, $id){
-        $this->helper->checkLoggedIn();
+        $this->checkLoggedIn();
         $this->view->showDelete($param, $id);
     }
 

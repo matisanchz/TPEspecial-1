@@ -30,19 +30,9 @@ require_once './app/Models/ConexionModel.php';
             return $species;
         }
 
-        public function getSubclassesNames(){
-            $query = $this->db->prepare("SELECT DISTINCT a.id_subclass, b.name FROM Specie a
-                                        INNER JOIN Subclass b ON 
-                                        a.id_subclass = b.id_subclass");
-            $query->execute();
-
-            $subclasses = $query->fetchAll(PDO::FETCH_OBJ);
-            
-            return $subclasses;
-        }
 
         public function getSpeciesBySubclass($name) {
-            $query = $this->db->prepare("SELECT a.* FROM Specie a
+            $query = $this->db->prepare("SELECT a.*, b.name as SubclassName FROM Specie a
                                         INNER JOIN Subclass b
                                         ON a.id_subclass = b.id_subclass
                                         WHERE b.name = (?)");

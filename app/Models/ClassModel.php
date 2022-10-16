@@ -9,7 +9,7 @@ require_once './app/Models/ConexionModel.php';
         }
 
         public function getClassesNames(){
-            $query = $this->db->prepare("SELECT name FROM Class");
+            $query = $this->db->prepare("SELECT id_class, name FROM Class");
             $query->execute();
 
             $classes = $query->fetchAll(PDO::FETCH_OBJ);
