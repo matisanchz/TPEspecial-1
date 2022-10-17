@@ -25,8 +25,9 @@ class SpecieController extends GenericController{
         $this->view->showSpecies($species);
     }
 
-    public function showSpecie($table, $id){
-        $item = $this->model->getSpecieBySubclass($table, $id);
+    public function showSpecie(/*$table, */$id){
+        // $item = $this->model->getSpecieBySubclass($table, $id);
+        $item = $this->model->getSpecieById($id);
         $this->view->showSpecie($item);
     }
 
@@ -48,9 +49,14 @@ class SpecieController extends GenericController{
         $author = $_POST['author'];
         $location = $_POST['location'];
         $id_subclass = (int)$_POST['id_subclass'];
-        $photo = $_POST['photo'];
-
-        $this->model->editSpecie($scientific_name, $author, $location, $id_subclass, $photo, $id);
+        $photo = $_FILES['photo']['tmp_name'];
+        if($_FILES['photo']['type'] == "image/jpg" || $_FILES['photo']['type'] == "image/jpeg" || $_FILES['photo']['type'] == "image/png"){
+            $this->model->editSpecie($scientific_name, $author, $location, $id_subclass, $photo, $id);
+            header("Location: " . BASE_URL);
+        }
+        else{
+            $this->view->showCUError($photo);
+        }
 
         header("Location: " . BASE_URL);
     }
@@ -61,9 +67,13 @@ class SpecieController extends GenericController{
         $author = $_POST['author'];
         $location = $_POST['location'];
         $id_subclass = $_POST['id_subclass'];
-        $photo = $_POST['photo'];
-        $this->model->insertSpecie($scientific_name, $author, $location, $id_subclass, $photo);
-        header("Location: " . BASE_URL);
+        $photo = $_FILES['photo']['tmp_name'];
+        if($_FILES['photo']['type'] == "image/jpg" || $_FILES['photo']['type'] == "image/jpeg" || $_FILES['photo']['type'] == "image/png"){
+            $this->model->insertSpecie($scientific_name, $author, $location, $id_subclass, $photo);
+            header("Location: " . BASE_URL);
+        }
+        else{
+            $this->view->showCUError($photo);
+        }
     }
-
 }

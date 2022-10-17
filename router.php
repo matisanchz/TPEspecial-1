@@ -157,7 +157,7 @@
                         break;
                     case 'show':
                         $SpecieController = new SpecieController();
-                        $SpecieController->showSpecie($params[0], $params[2]);
+                        $SpecieController->showSpecie($params[2]);
                         break;
                     default:
                         $MainController = new MainController();

@@ -13,6 +13,11 @@ class SpecieView extends ConexionView{
         $this->smarty->display('specie.tpl');
     }
 
+    public function showCUError($photo=null){
+        $this->smarty->assign('photo', $photo); 
+        $this->smarty->display('deny.tpl');
+    }
+
     function showSpecies($species) {
         $this->smarty->assign('count', count($species)); 
         $this->smarty->assign('species', $species);

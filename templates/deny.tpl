@@ -15,7 +15,11 @@
 <div class="alert alert-danger d-flex align-items-center" role="alert">
   <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
   <div>
-    Error 404 - Page not found.
+  {if isset($photo)&&!empty($photo)}
+    You can't create or update a register, with that image extension.
+  {else}
+    You can't create or update a register without a photo.
+  {/if}
   </div>
   <p class="mb-0"><button type="button" class="btn btn-outline-danger back-list ms-2">Back</button></p>
 </div>

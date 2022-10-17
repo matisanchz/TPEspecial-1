@@ -1,6 +1,6 @@
 {include file="header.tpl"}
 
-<form action="Specie/{if $param === 'add'}add{else}edit/{$id}{/if}" method="POST" class="my-4">
+<form action="Specie/{if $param === 'add'}add{else}edit/{$id}{/if}" method="POST" class="my-4" enctype="multipart/form-data">
     <div class="row">
         <div class="col-9">
             <div class="form-group">
@@ -20,10 +20,10 @@
         </div>
         <div class="form-group">
             <label>Photo link</label>
-            <textarea name="photo" class="form-control mt-2 w-50" rows="3"></textarea>
+            <input type="file" name="photo" id="imageToUpload">
         </div>
     <button type="submit" class="btn btn-primary mt-2 w-25">Save</button>
 </form>
-<button type="submit" class="btn btn-primary mt-2 w-25 back-list">Back</button>
+<button type="submit" class="btn btn-primary ms-2 mt-2 w-25 back-list">Back</button>
 
 {include file="footer.tpl"}
