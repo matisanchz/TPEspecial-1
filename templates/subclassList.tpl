@@ -1,9 +1,9 @@
 {include file="header.tpl"}
 
 {if isset($subclasses[0]->ClassName)}
-  <h1>Showing {$count} Subclasses from {$subclasses[0]->ClassName} Class</h1>
+  <h1 class="font-heading">Showing {$count} Subclasses from {$subclasses[0]->ClassName} Class</h1>
 {else}
-  <h1>Showing all Subclasses</h1>
+  <h1 class="font-heading">Showing all Subclasses</h1>
 {/if}
 
 

@@ -16,7 +16,8 @@
         </div>
     </div>
     <button type="submit" class="btn btn-primary mt-2 w-25">Save</button>
+    <button type="submit" class="btn btn-primary mt-2 w-25 back-list">Back to Subclass list</button>
 </form>
-<button type="submit" class="btn btn-primary mt-2 w-25 back-list">Back to Subclass list</button>
+
 
 {include file="footer.tpl"}

@@ -1,6 +1,6 @@
 {include file="header.tpl"}
 
-<div class="home">
+<div class="info-text">
   <img src="img/home.jpg" class="mw-100" alt="seashells">
    <div class="centered">
     <h3>WELCOME to MOLLUSCA</h3>
@@ -8,7 +8,7 @@
    </div>
 </div>
 
-<div class="home">
+<div class="info-text">
     
   <p> Malacology is the branch of invertebrate zoology that deals with the study of the Mollusca (mollusks or molluscs), the second-largest phylum of animals in terms of described species after the arthropods. </p>
   

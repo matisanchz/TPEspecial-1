@@ -1,6 +1,6 @@
 {include file="header.tpl"}
 
-<h1>Showing {$count} Classes</h1>
+<h1 class="font-heading">Showing {$count} Classes</h1>
 
 <table class="table">
   <thead>

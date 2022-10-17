@@ -45,7 +45,7 @@ class SubclassController extends GenericController{
         $id_class = (int)$_POST['id_class'];
         $this->model->editSubclass($name, $author, $id_class, $id);
         $this->view->showMessage($table, $id);
-        header("Location: " . BASE_URL);
+        $this->view->showAddEditMessage($name, $id);
     }
 
     public function addSubclass(){
@@ -54,6 +54,6 @@ class SubclassController extends GenericController{
         $author = $_POST['author'];
         $id_class = $_POST['id_class'];
         $this->model->insertSubclass($name, $author, $id_class);
-        header("Location: " . BASE_URL);
+        $this->view->showAddEditMessage($name);
     }
 }

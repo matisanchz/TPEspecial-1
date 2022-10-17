@@ -5,7 +5,7 @@
   
     <div class="text-center" class="card-body">
       <h5 class="card-title">{$specie[0]->scientific_name}</h5>
-      <p class="card-text">{$specie[0]->author}</p>
+      <p class="card-text">({$specie[0]->author})</p>
       <h6 class="card-title">Class</h6>
       <p class="card-text">{$specie[0]->id_class} - {$specie[0]->Class} ({$specie[0]->AuthorClass})</p>
       <h6 class="card-title">Subclass</h6>

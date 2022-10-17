@@ -37,7 +37,7 @@ class ClassController extends GenericController{
 
         $this->model->editClass($name, $author, $features, $id);
 
-        header("Location: " . BASE_URL);
+        $this->view->showAddEditMessage($name, $id);
     }
 
     public function addClass(){
@@ -45,8 +45,10 @@ class ClassController extends GenericController{
         $name = $_POST['name'];
         $author = $_POST['author'];
         $features = $_POST['features'];
+
         $this->model->insertClass($name, $author, $features);
-        header("Location: " . BASE_URL);
+        
+        $this->view->showAddEditMessage($name);
     }
 
 }

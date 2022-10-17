@@ -6,7 +6,7 @@ tbody tr:hover {
     background: rgba(95, 201, 250, 0.476);
 }
 
-.home{
+.info-text{
     position: relative;
     display: inline-block;
     text-align: center;
@@ -20,6 +20,11 @@ tbody tr:hover {
     transform: translate(-50%, -50%);
     font-style: italic;
     color:thistle;
+}
+
+.about{
+  top: 65%;
+  text-align: center;
 }
 
 * {
@@ -123,4 +128,9 @@ body {
   color: white;
   font-size: small;
   text-align: end;
+}
+
+.font-heading{
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-decoration: underline;
 }

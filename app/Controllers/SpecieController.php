@@ -51,13 +51,11 @@ class SpecieController extends GenericController{
         $photo = $_FILES['photo']['tmp_name'];
         if($_FILES['photo']['type'] == "image/jpg" || $_FILES['photo']['type'] == "image/jpeg" || $_FILES['photo']['type'] == "image/png"){
             $this->model->editSpecie($scientific_name, $author, $location, $id_subclass, $photo, $id);
-            header("Location: " . BASE_URL);
+            $this->view->showAddEditMessage($scientific_name, $id);
         }
         else{
             $this->view->showCUError($photo);
         }
-
-        header("Location: " . BASE_URL);
     }
 
     public function addSpecie(){
@@ -69,7 +67,7 @@ class SpecieController extends GenericController{
         $photo = $_FILES['photo']['tmp_name'];
         if($_FILES['photo']['type'] == "image/jpg" || $_FILES['photo']['type'] == "image/jpeg" || $_FILES['photo']['type'] == "image/png"){
             $this->model->insertSpecie($scientific_name, $author, $location, $id_subclass, $photo);
-            header("Location: " . BASE_URL);
+            $this->view->showAddEditMessage($scientific_name);
         }
         else{
             $this->view->showCUError($photo);

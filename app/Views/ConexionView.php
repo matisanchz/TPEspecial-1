@@ -23,6 +23,12 @@ class ConexionView{
         $this->smarty->display('message.tpl');
     }
 
+    public function showAddEditMessage($name, $id=null){
+        $this->smarty->assign('name', $name);
+        $this->smarty->assign('id', $id);
+        $this->smarty->display('addEditMessage.tpl');
+    }
+
     public function showDelete($param, $id){
         $this->smarty->assign('param', $param);
         $this->smarty->assign('id', $id);

@@ -1,15 +1,14 @@
 {include file="header.tpl"}
 
 {if isset($species[0]->SubclassName)}
-  <h1>Showing {$count} Species from {$species[0]->SubclassName} Subclass</h1>
+  <h1 class="font-heading">Showing {$count} Species from {$species[0]->SubclassName} Subclass</h1>
 {else}
-  <h1>Showing all Species</h1>
+  <h1 class="font-heading">Showing all Species</h1>
 {/if}
 
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
       <th scope="col">Scientific Name</th>
       <th scope="col">Author</th>
       <th scope="col">Location</th>
@@ -21,7 +20,6 @@
           <a class="link" href='Specie/show/{$specie->id_specie}' hidden>{$class->id_subclass}</a>
         </tr>
         <tr class="list">
-            <th scope="row">{$specie->id_specie}</th>
             <td>{$specie->scientific_name}</td>
             <td>{$specie->author}</td>
             <td>{$specie->location}</td>

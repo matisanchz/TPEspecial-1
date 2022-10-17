@@ -18,7 +18,7 @@ action="Class/{if $param === 'add'}add{else}edit/{$id}{/if}"
         <textarea name="features" class="form-control w-50" rows="3"></textarea>
     </div>
     <a href='Class' type='button' class="btn btn-primary mt-2 w-25">Back</a>
-    <button type="submit" class="btn btn-primary mt-2 w-25">Save</button>
+    <button type="submit" class="btn btn-primary ms-2 mt-2 w-25">Save</button>
 </form>
 
 {include file="footer.tpl"}
