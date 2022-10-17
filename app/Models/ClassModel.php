@@ -9,7 +9,7 @@ require_once './app/Models/ConexionModel.php';
         }
 
         public function getClassesNames(){
-            $query = $this->db->prepare("SELECT id_class, name FROM Class");
+            $query = $this->db->prepare("SELECT id_class, name FROM Class ORDER BY name");
             $query->execute();
 
             $classes = $query->fetchAll(PDO::FETCH_OBJ);
@@ -18,7 +18,7 @@ require_once './app/Models/ConexionModel.php';
         }
 
         public function getAllClasses() {
-            $query = $this->db->prepare("SELECT * FROM Class");
+            $query = $this->db->prepare("SELECT * FROM Class ORDER BY name");
             $query->execute();
 
             $classes = $query->fetchAll(PDO::FETCH_OBJ);

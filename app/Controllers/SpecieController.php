@@ -25,8 +25,7 @@ class SpecieController extends GenericController{
         $this->view->showSpecies($species);
     }
 
-    public function showSpecie(/*$table, */$id){
-        // $item = $this->model->getSpecieBySubclass($table, $id);
+    public function showSpecie($id){
         $item = $this->model->getSpecieById($id);
         $this->view->showSpecie($item);
     }

@@ -50,7 +50,17 @@ require_once './app/Models/ConexionModel.php';
         }
 
         private function uploadImage($photo){
-            $target = 'img/images-db/species/' . uniqid() . '.jpg';
+            $extension;
+            if($_FILES['photo']['type']=="image/jpg"){
+                $extension=".jpg";
+            }
+            else if($_FILES['photo']['type']=="image/png"){
+                $extension=".png";
+            }
+            else{
+                $extension=".jpeg";
+            }
+            $target = 'img/images-db/species/' . uniqid() . $extension;
             move_uploaded_file($photo, $target);
             return $target;
         }
