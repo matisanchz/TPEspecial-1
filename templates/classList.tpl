@@ -1,5 +1,7 @@
 {include file="header.tpl"}
 
+<h1>Showing {$count} Classes</h1>
+
 <table class="table">
   <thead>
     <tr>
@@ -27,18 +29,14 @@
       </tr>
     {/foreach}
   </tbody>
-  {if isset($smarty.session.IS_LOGGED)&&($smarty.session.IS_LOGGED)}
-  <tfoot>
-        <tr>
-            <td>
-                <a href='Class/form/add' type='button' class='btn btn-info'>Add</a>
-            </td>
-        </tr>
-  </tfoot>
-  {/if}
 </table>
 
+<button type="submit" class="btn btn-info mt-2 back-list">Back</button>
 
-<p class="mt-3"><small>Showing {$count} classes</small></p>
+<a href='' type='button' class='btn btn-info mt-2'>Home</a>
+
+{if isset($smarty.session.IS_LOGGED)&&($smarty.session.IS_LOGGED)}
+  <a href='Class/form/add' type='button' class='btn btn-info mt-2'>Add</a>
+{/if}
 
 {include file="footer.tpl"}

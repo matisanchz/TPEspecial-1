@@ -31,15 +31,14 @@
         </tr>
     {/foreach}
   </tbody>
-  {if isset($smarty.session.IS_LOGGED)&&($smarty.session.IS_LOGGED)}
-  <tfoot>
-        <tr>
-            <td>
-                <a href='Subclass/form/add' type='button' class='btn btn-info'>Add</a>
-            </td>
-        </tr>
-  </tfoot>
-  {/if}
 </table>
+
+<button type="submit" class="btn btn-info mt-2 back-list">Back</button>
+
+<a href='' type='button' class='btn btn-info mt-2'>Home</a>
+
+{if isset($smarty.session.IS_LOGGED)&&($smarty.session.IS_LOGGED)}
+  <a href='Subclass/form/add' type='button' class='btn btn-info mt-2'>Add</a>
+{/if}
 
 {include file="footer.tpl"}

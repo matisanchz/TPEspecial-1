@@ -5,13 +5,13 @@
         <div class="col-9">
             <div class="form-group">
                 <label>Scientific Name</label>
-                <input name="scientific_name" type="text" class="form-control w-50">
+                <input name="scientific_name" type="text" class="form-control w-50" required>
                 <label>Author</label>
-                <input name="author" type="text" class="form-control w-50">
+                <input name="author" type="text" class="form-control w-50" required>
                 <label>Location</label>
-                <input name="location" type="text" class="form-control w-50">
+                <input name="location" type="text" class="form-control w-50" required>
                 <label>Subclass</label>
-                <select name="id_subclass" class="form-select mt-2 w-50" aria-label="Default select example">
+                <select name="id_subclass" class="form-select mt-2 w-50" aria-label="Default select example" required>
                 {foreach from=$subclasses item=$subclass}
                     <option value="{$subclass->id_subclass}">{$subclass->name}</option>
                 {/foreach}
@@ -22,8 +22,8 @@
             <label>Photo link</label>
             <textarea name="photo" class="form-control mt-2 w-50" rows="3"></textarea>
         </div>
-    <button type="submit" class="btn btn-primary mt-2 w-25">Back</button>
     <button type="submit" class="btn btn-primary mt-2 w-25">Save</button>
 </form>
+<button type="submit" class="btn btn-primary mt-2 w-25 back-list">Back</button>
 
 {include file="footer.tpl"}

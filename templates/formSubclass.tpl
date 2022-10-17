@@ -4,20 +4,19 @@
     <div class="col-9">
         <div class="form-group">
             <label>Name</label>
-            <input name="name" type="text" class="form-control w-50">
+            <input name="name" type="text" class="form-control w-50" required>
             <label>Author</label>
-            <input name="author" type="text" class="form-control w-50">
+            <input name="author" type="text" class="form-control w-50" required>
             <label>Class</label>
-            <select name="id_class" class="form-select w-50" aria-label="Default select example">
+            <select name="id_class" class="form-select w-50" aria-label="Default select example" required>
                 {foreach from=$classes item=$class}
                     <option value="{$class->id_class}">{$class->name}</option>
                 {/foreach}
             </select>
         </div>
     </div>
-    
-    <button type="submit" class="btn btn-primary mt-2 w-25">Back</button>
     <button type="submit" class="btn btn-primary mt-2 w-25">Save</button>
 </form>
+<button type="submit" class="btn btn-primary mt-2 w-25 back-list">Back to Subclass list</button>
 
 {include file="footer.tpl"}
