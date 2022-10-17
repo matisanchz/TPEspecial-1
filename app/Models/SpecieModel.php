@@ -22,7 +22,7 @@ require_once './app/Models/ConexionModel.php';
         }
 
         public function getAllSpecies() {
-            $query = $this->db->prepare("SELECT * FROM Specie");
+            $query = $this->db->prepare("SELECT * FROM Specie ORDER BY scientific_name");
             $query->execute();
 
             $species = $query->fetchAll(PDO::FETCH_OBJ);
@@ -35,7 +35,7 @@ require_once './app/Models/ConexionModel.php';
             $query = $this->db->prepare("SELECT a.*, b.name as SubclassName FROM Specie a
                                         INNER JOIN Subclass b
                                         ON a.id_subclass = b.id_subclass
-                                        WHERE b.name = (?)");
+                                        WHERE b.name = (?) ORDER BY scientific_name");
             $query->execute([$name]);
 
             $species = $query->fetchAll(PDO::FETCH_OBJ);

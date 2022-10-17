@@ -27,7 +27,7 @@ require_once './app/Models/ConexionModel.php';
         }
 
         public function getAllSubclasses() {
-            $query = $this->db->prepare("SELECT * FROM Subclass");
+            $query = $this->db->prepare("SELECT * FROM Subclass ORDER BY name");
             $query->execute();
 
             $subclasses = $query->fetchAll(PDO::FETCH_OBJ);
@@ -38,7 +38,7 @@ require_once './app/Models/ConexionModel.php';
         public function getSubclassesByClass($name) {
             $query = $this->db->prepare("SELECT s.*, c.name as ClassName FROM Subclass s
                                         INNER JOIN Class c ON c.id_class = s.id_class
-                                        WHERE c.name = (?)");
+                                        WHERE c.name = (?) ORDER BY s.name");
             $query->execute([$name]);
 
             $subclasses = $query->fetchAll(PDO::FETCH_OBJ);
@@ -47,7 +47,7 @@ require_once './app/Models/ConexionModel.php';
         }
 
         public function getSubclassesNames(){
-            $query = $this->db->prepare("SELECT id_subclass, name FROM Subclass");
+            $query = $this->db->prepare("SELECT id_subclass, name FROM Subclass ORDER BY name");
             $query->execute();
 
             $subclasses = $query->fetchAll(PDO::FETCH_OBJ);
