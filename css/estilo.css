@@ -31,6 +31,9 @@ body {
   background: url('img/bg.jpg') no-repeat center;
   background-size: cover;
   font-family: sans-serif;
+  position: relative;
+  padding-bottom: 3em;
+  min-height: 100vh;
 }
 .login-wrapper {
   height: 100vh;
@@ -107,4 +110,17 @@ body {
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.footer-line{
+  background-color: rgba(0, 0, 0, 0.35);
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+
+.copyright{
+  color: white;
+  font-size: small;
+  text-align: end;
 }
