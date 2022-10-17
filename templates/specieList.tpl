@@ -41,7 +41,7 @@
 <a href='' type='button' class='btn btn-info mt-2'>Home</a>
 
 {if isset($smarty.session.IS_LOGGED)&&($smarty.session.IS_LOGGED)}
-  <a href='Specie/form/add' type='button' class='btn btn-info mt-2'>Add</a>
+  <a href='Specie/form/add' type='button' class='btn btn-info mt-2 float-end me-5'>Add</a>
 {/if}
 
 {include file="footer.tpl"}

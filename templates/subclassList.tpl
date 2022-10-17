@@ -22,7 +22,10 @@
         <tr class="list">
             <td>{$subclass->name}</td>
             <td>{$subclass->author}</td>
-            <td>
+            <td ></td>
+            <td ></td>
+            <td ></td>
+            <td float-end>
               {if isset($smarty.session.IS_LOGGED)&&($smarty.session.IS_LOGGED)}
                 <a href='Subclass/form/edit/{$subclass->id_subclass}' type='button' class='btn btn-success'><img src="./img/edit.png" alt="Logo" width="25" height="25"></a>    
                 <a href='Subclass/confirm-delete/{$subclass->id_subclass}' type='button' class='btn btn-danger'><img src="./img/delete.png" alt="Logo" width="25" height="25"></a>
@@ -38,7 +41,7 @@
 <a href='' type='button' class='btn btn-info mt-2'>Home</a>
 
 {if isset($smarty.session.IS_LOGGED)&&($smarty.session.IS_LOGGED)}
-  <a href='Subclass/form/add' type='button' class='btn btn-info mt-2'>Add</a>
+  <a href='Subclass/form/add' type='button' class='btn btn-info mt-2 float-end me-5'>Add</a>
 {/if}
 
 {include file="footer.tpl"}

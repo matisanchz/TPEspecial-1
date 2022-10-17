@@ -18,4 +18,6 @@
   </div>
 </div>
 
+<p class="mb-0"><button type="button" class="btn btn-outline-success back-2-list w-25 mt-2">Back</button></p>
+
 {include file="footer.tpl"}

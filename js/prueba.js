@@ -16,3 +16,10 @@ for(let i = 0; i < btn_back.length; i++){
         history.back();
     });
 }
+
+let btn_back_2 = document.querySelectorAll('.back-2-list');
+for(let i = 0; i < btn_back_2.length; i++){
+    btn_back_2[i].addEventListener('click', function(e){
+        history.go(-2);
+    });
+}

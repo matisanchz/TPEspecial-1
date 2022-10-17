@@ -3,18 +3,14 @@
 require_once './app/Controllers/GenericController.php';
 require_once './app/Models/ClassModel.php';
 require_once './app/Views/ClassView.php';
-// require_once './app/Helpers/AuthHelper.php';
 
 
 class ClassController extends GenericController{
-
-    // private $helper;
 
     public function __construct(){
         parent::__construct();
         $this->view = new ClassView();
         $this->model = new ClassModel();
-        // $this->helper = new AuthHelper();
     }
 
     public function showClasses() {

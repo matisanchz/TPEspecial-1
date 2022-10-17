@@ -3,11 +3,9 @@
 require_once './app/Controllers/GenericController.php';
 require_once './app/Models/SpecieModel.php';
 require_once './app/Views/SpecieView.php';
-// require_once './app/Helpers/AuthHelper.php';
 
 class SpecieController extends GenericController{
 
-    // private $helper;
     private $modelSubclass;
 
     public function __construct(){
@@ -15,8 +13,6 @@ class SpecieController extends GenericController{
         $this->view = new SpecieView;
         $this->model = new SpecieModel;
         $this->modelSubclass = new SubclassModel;
-        // $this->helper = new AuthHelper();
-
     }
 
     public function showSpecies($name=null) {

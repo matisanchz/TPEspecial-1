@@ -4,11 +4,9 @@ require_once './app/Controllers/GenericController.php';
 require_once './app/Models/SubclassModel.php';
 require_once './app/Models/ClassModel.php';
 require_once './app/Views/SubclassView.php';
-// require_once './app/Helpers/AuthHelper.php';
 
 class SubclassController extends GenericController{
 
-    // private $helper;
     private $modelClass;
 
     public function __construct(){
@@ -16,7 +14,6 @@ class SubclassController extends GenericController{
         $this->view = new SubclassView();
         $this->model = new SubclassModel();
         $this->modelClass = new ClassModel();
-        // $this->helper = new AuthHelper();
     }
 
     public function showSubclasses($name = null) {
