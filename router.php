@@ -15,9 +15,6 @@
 
     $params = explode('/', $action);
 
-    //admin@gmail.com
-    //web2
-
     switch ($params[0]) {
         case 'home':
             $MainController = new MainController();
