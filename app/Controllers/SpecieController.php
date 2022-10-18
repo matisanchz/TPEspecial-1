@@ -33,7 +33,11 @@ class SpecieController extends GenericController{
     public function showFormSpecie($param, $id=null){
         $this->checkLoggedIn();
         $subclasses = $this->modelSubclass->getSubclassesNames();
-        $this->view->showFormSpecie($param, $id, $subclasses);
+        $specie=null;
+        if(isset($id)){
+            $specie = $this->model->getSpecie($id);
+        }
+        $this->view->showFormSpecie($param, $id, $subclasses, $specie);
     }
 
     public function DeleteSpecie($table, $id){

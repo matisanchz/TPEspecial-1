@@ -20,8 +20,8 @@
         <td>{$class->author}</td>
         <td>{$class->features}</td>
         {if isset($smarty.session.IS_LOGGED)&&($smarty.session.IS_LOGGED)}
-          <td>
-            <a href='Class/form/edit/{$class->id_class}' type='button' class='btn btn-success'><img src="./img/edit.png" alt="Logo" width="25" height="25"></a>    
+          <td class="d-flex p-2">
+            <a href='Class/form/edit/{$class->id_class}' type='button' class='btn btn-success me-1'><img src="./img/edit.png" alt="Logo" width="25" height="25"></a>    
             <a href='Class/confirm-delete/{$class->id_class}' type='button' class='btn btn-danger'><img src="./img/delete.png" alt="Logo" width="25" height="25"></a>
           </td>
         {/if}

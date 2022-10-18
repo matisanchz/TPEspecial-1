@@ -55,4 +55,13 @@ require_once './app/Models/ConexionModel.php';
             return $subclasses;
         }
 
+        public function getSubclassById($id){
+            $query = $this->db->prepare("SELECT * FROM Subclass WHERE id_subclass=(?)");
+            $query->execute([$id]);
+
+            $subclass = $query->fetchAll(PDO::FETCH_OBJ);
+            
+            return $subclass;
+        }
+
     }

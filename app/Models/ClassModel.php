@@ -26,6 +26,15 @@ require_once './app/Models/ConexionModel.php';
             return $classes;
         }
 
+        public function getClassById($id) {
+            $query = $this->db->prepare("SELECT * FROM Class WHERE id_class=(?)");
+            $query->execute([$id]);
+
+            $class = $query->fetchAll(PDO::FETCH_OBJ);
+            
+            return $class;
+        }
+
         public function insertClass($name, $author, $features) {
             $query = $this->db->prepare("INSERT INTO Class (name, author, features) VALUES (?, ?, ?)");
             $query->execute([$name, $author, $features]);

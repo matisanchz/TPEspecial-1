@@ -29,7 +29,11 @@ class SubclassController extends GenericController{
     public function showFormSubclass($param, $id=null){
         $this->checkLoggedIn();
         $classes = $this->modelClass->getClassesNames();
-        $this->view->showFormSubclass($param, $id, $classes);
+        $subclass = null;
+        if(isset($id)){
+            $subclass=$this->model->getSubclassById($id);
+        }
+        $this->view->showFormSubclass($param, $id, $classes, $subclass);
     }
 
     public function DeleteSubclass($table, $id){
@@ -44,7 +48,6 @@ class SubclassController extends GenericController{
         $author = $_POST['author'];
         $id_class = (int)$_POST['id_class'];
         $this->model->editSubclass($name, $author, $id_class, $id);
-        $this->view->showMessage($table, $id);
         $this->view->showAddEditMessage($name, $id);
     }
 

@@ -21,6 +21,15 @@ require_once './app/Models/ConexionModel.php';
             return $specie;
         }
 
+        public function getSpecie($id) {
+            $query = $this->db->prepare("SELECT * FROM Specie WHERE id_specie = (?)");
+            $query->execute([$id]);
+
+            $specie = $query->fetchAll(PDO::FETCH_OBJ);
+            
+            return $specie;
+        }
+
         public function getAllSpecies() {
             $query = $this->db->prepare("SELECT * FROM Specie ORDER BY scientific_name");
             $query->execute();

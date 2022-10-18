@@ -5,15 +5,15 @@
         <div class="col-9">
             <div class="form-group">
                 <label>Scientific Name</label>
-                <input name="scientific_name" type="text" class="form-control w-50" required>
+                <input name="scientific_name" {if isset($id)}value="{$specie[0]->scientific_name}"{/if} type="text" class="form-control w-50" required>
                 <label>Author</label>
-                <input name="author" type="text" class="form-control w-50" required>
+                <input name="author" {if isset($id)}value="{$specie[0]->author}"{/if} type="text" class="form-control w-50" required>
                 <label>Location</label>
-                <input name="location" type="text" class="form-control w-50" required>
+                <input name="location" {if isset($id)}value="{$specie[0]->location}"{/if} type="text" class="form-control w-50" required>
                 <label>Subclass</label>
                 <select name="id_subclass" class="form-select mt-2 w-50" aria-label="Default select example" required>
                 {foreach from=$subclasses item=$subclass}
-                    <option value="{$subclass->id_subclass}">{$subclass->name}</option>
+                    <option value="{$subclass->id_subclass}" {if isset($id)&&(($specie[0]->id_subclass)===($subclass->id_subclass))}selected{/if}>{$subclass->name}</option>
                 {/foreach}
                 </select>
             </div>

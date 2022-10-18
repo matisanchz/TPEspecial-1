@@ -24,10 +24,11 @@ class SpecieView extends ConexionView{
         $this->smarty->display('specieList.tpl');
     }
 
-    public function showFormSpecie($param, $id, $subclasses){
+    public function showFormSpecie($param, $id, $subclasses, $specie){
         $this->smarty->assign('param', $param);
         $this->smarty->assign('id', $id);
         $this->smarty->assign('subclasses', $subclasses);
+        $this->smarty->assign('specie', $specie);
         $this->smarty->display('formSpecie.tpl');
     } 
 

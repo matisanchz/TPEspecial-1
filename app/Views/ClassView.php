@@ -15,8 +15,9 @@ class ClassView extends ConexionView{
         $this->smarty->display('classList.tpl');
     }
 
-    public function showFormClass($param, $id){
+    public function showFormClass($param, $id, $class){
         $this->smarty->assign('param', $param);
+        $this->smarty->assign('class', $class);
         $this->smarty->assign('id', $id); 
         $this->smarty->display('formClass.tpl');
     } 

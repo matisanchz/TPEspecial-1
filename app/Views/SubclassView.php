@@ -15,10 +15,11 @@ class SubclassView extends ConexionView{
         $this->smarty->display('subclassList.tpl');
     }
 
-    public function showFormSubclass($param, $id, $classes){
+    public function showFormSubclass($param, $id, $classes, $subclass){
         $this->smarty->assign('param', $param);
         $this->smarty->assign('id', $id);
         $this->smarty->assign('classes', $classes);
+        $this->smarty->assign('subclass', $subclass);
         $this->smarty->display('formSubclass.tpl');
     } 
 }

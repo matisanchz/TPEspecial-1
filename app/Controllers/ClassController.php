@@ -20,7 +20,11 @@ class ClassController extends GenericController{
 
     public function showFormClass($param, $id=null){
         $this->checkLoggedIn();
-        $this->view->showFormClass($param, $id);
+        $class=null;
+        if(isset($id)){
+            $class=$this->model->getClassById($id);
+        }
+        $this->view->showFormClass($param, $id, $class);
     }
 
     public function DeleteClass($table, $id){
